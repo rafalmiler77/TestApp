@@ -1,0 +1,1 @@
+Starts server with command: npm start --production &

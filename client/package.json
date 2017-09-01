@@ -1,0 +1,18 @@
+{
+  "name": "testapp-client",
+  "version": "1.0.0",
+  "description": "testing of various things",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafal",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
