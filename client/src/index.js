@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader'
+import App from '../App';
 import _ from 'lodash';
 
 function component() {
@@ -17,10 +19,21 @@ function component() {
 console.log('index.js')
 document.body.appendChild(component());
 
-const App = () => {
-  return <div>this is react!!</div>
-}
+
 ReactDOM.render(
-  <App />,
+  <AppContainer>
+  <App />
+  </AppContainer>,
   document.getElementById('react-hook')
-)
+);
+if (module.hot) {
+  module.hot.accept('../App', () => {
+    const NextApp = require('../App').default;
+    ReactDOM.render(
+      <AppContainer>
+        <NextApp /> 
+      </AppContainer>,
+      document.getElementById('react-hook')
+    );
+  });
+}
