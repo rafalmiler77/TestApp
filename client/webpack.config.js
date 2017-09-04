@@ -15,11 +15,16 @@ module.exports = {
   devtool: 'inline-source-map',
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['react-hot-loader/webpack', 'babel-loader?presets[]=react,presets[]=es2015'],
-exclude: /node_modules/ },
       {
-        test: /\.jsx$/, loaders: ['react-hot-loader/webpack', 'babel-loader?presets[]=react,presets[]=es2015'],
- exclude: /node_modules/ }
+        test: /\.js$/,
+        loaders: ['react-hot-loader/webpack', 'babel-loader'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.jsx$/,
+        loaders: ['react-hot-loader/webpack', 'babel-loader'],
+        exclude: /node_modules/
+      }
     ]
   },
   plugins: [
@@ -27,7 +32,7 @@ exclude: /node_modules/ },
     new webpack.NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(['../client/dist']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'JS Testing'
     })
   ],
   resolve: {
